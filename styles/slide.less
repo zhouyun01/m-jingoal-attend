@@ -1,0 +1,123 @@
+#slides {
+    display: none;
+    text-align: center;
+}
+
+#slides .slidesjs-navigation {
+    margin-top: 3px;
+}
+
+#slides .slidesjs-previous {
+    margin-right: 5px;
+    float: left;
+}
+
+#slides .slidesjs-next {
+    margin-right: 5px;
+    float: left;
+}
+
+.slidesjs-pagination {
+    margin: 20px 0 0;
+    display: inline-block;
+    list-style: none;
+}
+
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 5px;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    width: 12px;
+    height: 12px;
+    padding-top: 13px;
+    background-image: url(../images/dot.png);
+    background-repeat: no-repeat;
+    background-size: 24px 12px;
+    background-position: -12px 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+    background-position: 0 0
+}
+
+.slidesjs-pagination li a:hover {
+    background-position: 0 0
+}
+
+.slidesjs-title {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.slidesjs-title li {
+  display: none;
+}
+
+.slidesjs-title li.active {
+  display: block;
+}
+
+#slides a:link,
+#slides a:visited {
+    color: #333
+}
+
+#slides a:hover,
+#slides a:active {
+    color: #9e2020
+}
+
+.navbar {
+    overflow: hidden
+}
+
+.container {
+    padding: 0 30px;
+    margin: 0 auto
+}
+
+
+/* For tablets & smart phones */
+
+@media (max-width: 767px) {
+    body {
+        /*padding-left: 20px;
+        padding-right: 20px;*/
+    }
+    .container {
+        width: auto
+    }
+}
+
+
+/* For smartphones */
+
+@media (max-width: 480px) {
+    .container {
+        width: auto
+    }
+}
+
+
+/* For smaller displays like laptops */
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .container {
+        width: 724px
+    }
+}
+
+
+/* For larger displays */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px
+    }
+}

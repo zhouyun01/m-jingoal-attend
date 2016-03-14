@@ -1,0 +1,145 @@
+/*产品介绍页面*/
+
+.intro {
+    margin: 0.50rem auto;
+}
+
+.intro p {
+    font-size: 0.26rem;
+    color: #000;
+    text-align: center;
+}
+
+.slide-box {
+    padding-bottom: 0.30rem;
+    text-align: center;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    display: block;
+}
+
+.product-list > li {
+    float: left;
+    padding: 0 0.15rem;
+}
+
+.product_layout p {
+    margin-bottom: 0.15rem;
+}
+
+.product_img {
+    font-size: 0;
+    img {
+        width: 100%;
+        display: none;
+        &:first-child {
+            display: block;
+        }
+    }
+}
+
+.new_list {
+    margin: 0.28rem 0;
+}
+
+.pic_bac {
+    font-size: 0.16rem;
+}
+
+.new_list span {
+    padding: 5px 10px;
+    border: 1px solid #f40606;
+    margin: 0 auto;
+    border-radius: 3px;
+    text-align: center;
+    color: #f40606;
+    font-size: 12px;
+}
+
+.new_list span a {
+    color: #f40606;
+}
+
+.explain,
+.capacity {
+    color: #000;
+    font-size: 0.16rem;
+}
+
+.model {
+    color: #333;
+    font-size: 0.24rem;
+    margin-bottom: 0.20rem;
+}
+
+.price {
+    margin: 0.35rem 0;
+    font-size: 0.26rem;
+}
+
+.color_list {
+    border-top: 1px solid #e5e5e5;
+    padding: 0.23rem 0;
+    li {
+        display: inline-block;
+        margin: 0 1em;
+        font-size: 0.16rem;
+        .color_radio {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-bottom: .5em;
+            background: url(../images/color_radio.png) no-repeat -30px 0;
+            background-size: 60px 30px;
+        }
+        &.active {
+            .color_radio {
+                background-position: 0 0;
+            }
+        }
+    }
+}
+
+.sel_btn {
+    margin: 0 10%;
+    padding: .5em 0;
+    font-size: 0.20rem;
+    border-radius: 5px;
+}
+
+.parameter .detail {
+    margin: 0.30rem auto;
+    text-align: center;
+    color: #4b4a4a;
+    font-size: 0.20rem;
+}
+
+.parameter table {
+    width: 80%;
+    border-top: 2px solid #000;
+    margin: 0 auto;
+    margin-bottom: 0.50rem;
+}
+
+.parameter table tr {
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+}
+
+.parameter table td {
+    padding: 0.1rem 0;
+    width: 50%;
+    border-bottom: 1px solid #ccc;
+}
+
+.parameter table tr td:nth-child(1) {
+    text-align: left;
+}
+
+.parameter table tr td:nth-child(2) {
+    text-align: right;
+}
