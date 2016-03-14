@@ -304,10 +304,11 @@ var ActionRecord = {
         });
     },
     clickSubmit: function(info) {
-        // 观看视频记录
+        // 提交意向记录
         listenLog({
             actionTag: 'click_submit',
             time: this.time,
+            action: '点击了提交按钮',
             productInfo: info
         });
     }

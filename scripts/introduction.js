@@ -32,7 +32,7 @@ $(function() {
             }
         });
 
-        ActionRecord.loadProduct('打开了“选购人脸考勤机页面”');
+        ActionRecord.loadFaceAttend();
     }
     if (url_token == "12") {
         $(".intro").find("p").html("真地指纹考勤机");
@@ -67,7 +67,7 @@ $(function() {
             }
         });
 
-        ActionRecord.loadProduct('打开了“选购指纹考勤机页面”');
+        ActionRecord.loadFingerAttend();
     }
 
     $('.color_list').on('click', 'li', function(e) {
@@ -87,7 +87,7 @@ $(function() {
         var pInfo = 'Face: ZD|' + key + '|' +
             $(this).parents('.product_layout').find('.color_list li.active .color_text').html() +
             '|' + networkModel;
-        ActionRecord.clickProduct(pInfo);
+        ActionRecord.clickFaceAttend(pInfo);
         window.location.href = 'intention.html?key=' + key + '&model=' + model + '&src=' + imgSrc;
         e.stopPropagation();
     });
@@ -331,20 +331,38 @@ $(function() {
 
 var ActionRecord = {
     time: getTime(true),
-    loadProduct: function(type) {
-        // 打开考勤机页面
+    loadFaceAttend: function () {
+        // 打开了“选购人脸考勤机页面”
         listenLog({
-            actionTag: 'load_product',
+            actionTag: 'load_face_attend',
             time: this.time,
-            action: type,
+            action: '打开了“选购人脸考勤机页面”',
             system: navigator.userAgent,
             referrer: getCookie('referrer')
         });
     },
-    clickProduct: function(info) {
+    loadFingerAttend: function () {
+        // 打开了“选购指纹考勤机页面”
+        listenLog({
+            actionTag: 'load_finger_attend',
+            time: this.time,
+            action: '打开了“选购指纹考勤机页面”',
+            system: navigator.userAgent,
+            referrer: getCookie('referrer')
+        });
+    },
+    clickFaceAttend: function(info) {
         // 选择的产品信息
         listenLog({
-            actionTag: 'click_product',
+            actionTag: 'click_face_attend',
+            time: this.time,
+            productInfo: info
+        });
+    },
+    clickFingerAttend: function(info) {
+        // 选择的产品信息
+        listenLog({
+            actionTag: 'click_finger_attend',
             time: this.time,
             productInfo: info
         });

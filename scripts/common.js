@@ -58,7 +58,7 @@ var listenLog = function(obj) {
         }
     }
     var msgLogStr = JSON.stringify(msgLog);
-    console.log(msgLogStr);
+    // console.log(msgLogStr);
 
     img = new Image;
     /\.jingoal\.com$/.test(location.hostname) ? img.src = "https://jincai.jingoal.com/agent/log/logsend?topic=web.action&msg=" + msgLogStr : img.src = "http://192.168.19.3:8080/agent/log/logsend?topic=web.action&msg=" + msgLogStr;
