@@ -7,32 +7,32 @@ $(document).ready(function() {
             title: "真地人脸指纹考勤机",
             networkModel: "WIFI+网线型",
             content: "4.3英寸电容触摸屏（480*272）",
-            value: "人脸容量500人",
-            price: "899",
+            value: "指纹容量：5000枚</br>人脸容量：500人",
+            price: "749",
             color: "白色"
         },
         "zdrl2": {
             title: "真地人脸指纹考勤机",
             networkModel: "WIFI+网线型",
             content: "4.3英寸电容触摸屏（480*272）",
-            value: "人脸容量500人",
-            price: "899",
+            value: "指纹容量：5000枚&nbsp;&nbsp;&nbsp;人脸容量：500人",
+            price: "749",
             color: "黑灰色"
         },
         "zdrl3": {
             title: "真地人脸指纹考勤机",
             networkModel: "网线型",
             content: "4.3英寸电容触摸屏（480*272）",
-            value: "人脸容量500人",
-            price: "799",
+            value: "指纹容量：5000枚&nbsp;&nbsp;&nbsp;人脸容量：500人",
+            price: "649",
             color: "白色"
         },
         "zdrl4": {
             title: "真地人脸指纹考勤机",
             networkModel: "网线型",
             content: "4.3英寸电容触摸屏（480*272）",
-            value: "人脸容量500人",
-            price: "799",
+            value: "指纹容量：5000枚&nbsp;&nbsp;&nbsp;人脸容量：500人",
+            price: "649",
             color: "黑灰色"
         },
         "zdzw1": {
@@ -40,7 +40,7 @@ $(document).ready(function() {
             networkModel: "WIFI+网线型",
             content: "3.5英寸彩屏（320*240）",
             value: "指纹容量3000枚",
-            price: "699",
+            price: "549",
             color: "银白色"
         },
         "zdzw2": {
@@ -48,7 +48,7 @@ $(document).ready(function() {
             networkModel: "网线型",
             content: "3.5英寸彩屏（320*240）",
             value: "指纹容量3000枚",
-            price: "599",
+            price: "449",
             color: "银白色"
         },
         "hszw1": {
@@ -77,6 +77,7 @@ $(document).ready(function() {
     var value = product_datas[model].value;
     var price = product_datas[model].price;
     var color = product_datas[model].color;
+    var activity = Request.activity;
     $(".intent_cont dd").find("p").eq(0).html(title);
     if (networkModel) {
         $(".intent_cont dd").find("p").eq(1).html(networkModel);
@@ -90,6 +91,22 @@ $(document).ready(function() {
     $(".img_src").attr("src", img_src);
     var one_pic = price * 1
     $(".pri_cont").html(one_pic);
+
+    if (activity && activity === 'renew') {
+        htmlStr = '<div class="desc-layout" id="active_rule">'
+            + '<h3>”换新季“活动规则：</h3>'
+            + '<ol class="num-list">'
+            + '<li>参加活动的考勤机型号为JMB708型WIFI版智能考勤机、JMB706型网线版智能考勤机、JMB106型网线版智能考勤机和JMB108型WIFI版智能考勤机（其他机型不参加）；</li>'
+            + '<li>用户收到新考勤机后，请于30日内（以邮寄时间为准）将旧考勤机寄送到：广州市番禺区钟村镇高沙工业区力丰工业园 真地公司 张战国 收 18922158082；</li>'
+            + '<li>请在包装盒内用纸写上1）订单号2）联系人3）联系电话4）寄送台数，用户需自行承担邮寄费用，到付将被仓库拒收；</li>'
+            + '<li>本活动不限制购买数量，每台旧考勤机（不限品牌和型号）在换购一台新考勤机时可抵扣150元；</li>'
+            + '<li>活动只限于企业自用，不得转售，如发现今目标将有权终止服务并保留进一步追究法律责任的权利 ；</li>'
+            + '<li>活动时间截止至2016年4月20日；</li>'
+            + '<li>本次活动的最终解释权归今目标所有。</li>'
+            + '</ol>'
+            + '</div>';
+        $('#intent_wra').append(htmlStr);
+    }
 
     //数量的加减
     var num_val = parseInt($("#num_val").val());
@@ -310,6 +327,14 @@ var ActionRecord = {
             time: this.time,
             action: '点击了提交按钮',
             productInfo: info
+        });
+    },
+    clickTele: function () {
+        // 点击客服电话记录
+        listenLog({
+            actionTag: 'click_tele',
+            time: this.time,
+            action: '点击客服电话'
         });
     }
 }

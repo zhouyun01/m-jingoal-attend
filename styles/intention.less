@@ -30,23 +30,28 @@
     padding-left: 0.10rem;
 }
 
-.intent_cont dl dd .title, .sub_title {
+.intent_cont dl dd .title {
     font-size: 0.22rem;
     color: #000;
 }
 
-.intent_cont dl dd .sub_title {
-    font-size: 0.19rem;
+.intent_cont dl dd .network_model {
+    // font-size: 0.19rem;
 }
 
 .intent_cont dl dd .price_text {
-    font-size: 0.16rem;
+    font-size: 0.17rem;
     color: #999;
     margin-bottom: 0;
 }
 
+.intent_cont dl dd .price_text.activity {
+    color: #f00;
+}
+
 .intent_cont dl dd > p {
-    margin-bottom: 0.12rem;
+    margin-bottom: 0.1rem;
+    font-size: 14px;
 }
 
 .intent_cont .num {
@@ -56,7 +61,7 @@
 .intent_cont .num .num_wra {
     margin-right: 0.30rem;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     border: 1px solid #e1e1e1;
     border-radius: 3px;
 }
@@ -96,6 +101,7 @@
     font-size: 0.18rem;
     line-height: 30px;
     font-weight: bold;
+    vertical-align: middle;
 }
 
 .intent_cont .num .num_top {
@@ -119,8 +125,10 @@
     opacity: 0.2;
 }
 
+.load_tips { margin-top: .22rem; line-height: 1.6; }
+
 .load {
-    padding: 0.50rem 0;
+    padding: 0.28rem 0;
 }
 
 .load input {
@@ -279,6 +287,25 @@
             line-height: 0.55rem;
             text-align: center;
             border-radius: 5px;
+        }
+    }
+}
+
+.footer {
+    .tele {
+        margin-bottom: 0.40rem;
+        height: 0.50rem;
+        line-height: 0.50rem;
+        border: 1px solid #cecece;
+        border-radius: 5px;
+        font-size: 0.18rem;
+        img {
+            width: 0.23rem;
+            height: 0.23rem;
+            vertical-align: middle;
+        }
+        a {
+            color: #08c;
         }
     }
 }

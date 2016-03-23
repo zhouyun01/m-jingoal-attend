@@ -11,12 +11,18 @@
     <meta content="authenticity_token" name="csrf-param" />
     <meta content="FvU3fmzdGnXZAjehauxXjTyFE8MLox0StWVC4oMzhOs=" name="csrf-token" />
     <link rel="stylesheet" type="text/css" href="dist/assets/styles/main.min.css?v=20160315">
-    <link rel="stylesheet" type="text/css" href="dist/assets/styles/intention.min.css?v=20160315">
+    <link rel="stylesheet" type="text/css" href="dist/assets/styles/intention.min.css?v=20160322">
+    <style type="text/css">
+    .desc-layout { padding: .15rem; background-color: #fbfbfb; border: 1px solid #e0e1e1; }
+    .desc-layout h3 { margin-bottom: .1rem; font-size: 13px; color: #333; }
+    .desc-layout ol { margin-left: .2rem }
+    .desc-layout ol li { line-height: 1.8; font-size: 12px; }
+    </style>
     <script src="./dist/assets/scripts/jquery-1.12.1.min.js?v=20160315"></script>
 </head>
 
-<body>
-    <div class="layout content-bg" id="intent_wra">
+<body class="content-bg">
+    <div class="layout" id="intent_wra">
         <div class="intent_wra">
             <h1>提交购买意向</h1>
             <div class="intent_cont">
@@ -25,11 +31,11 @@
                         <img class="img_src" src="dist/assets/images/product.jpg?v=20160315">
                     </dt>
                     <dd>
-                        <p class="title">真地人脸指纹考勤机</p>
-                        <p class="sub_title">WIFI+网线型</p>
-                        <p>4.3英寸电容触摸屏（分辨率 480*272）</p>
-                        <p>人脸容量： 500人</p>
-                        <p class="price_text">￥<span class="pri">899</span></p>
+                        <p class="title"></p>
+                        <p class="network_model"></p>
+                        <p></p>
+                        <p></p>
+                        <p class="price_text activity">￥<span class="pri"></span></p>
                         <div class="num">
                             <div class="num_wra">
                                 <a class="reduce" id="reduce" href="javascript:void(0);"><span>-</span></a>
@@ -39,13 +45,14 @@
                                 <a class="add" id="add" href="javascript:void(0);"><span>+</span></a>
                                 <div class="num_top"></div>
                             </div>
-                            <span class="pri_all">￥<span class="pri_cont">899</span></span>
+                            <span class="pri_all">￥<span class="pri_cont"></span></span>
                         </div>
                     </dd>
                 </dl>
             </div>
+            <p class="load_tips">请留下您的联系电话，工作人员会在1个工作日内与您联系，并提供更详细的产品介绍及选购建议。</p>
             <div class="load">
-                <input type="tel" id="tele" placeholder="请留下您的电话号码" />
+                <input type="tel" id="tele" placeholder="请输入您的电话号码" />
                 <div class="load_wra">
                     <a class="load_btn" href="javascript:void(0);">提交</a>
                 </div>
@@ -65,13 +72,16 @@
             </div>
         </div>
     </div>
-    <div class="footer content-bg">
+    <div class="footer">
+        <div class="tele">
+            <img src="./dist/assets/images/tele.png?v=20160315">&nbsp;&nbsp;<a href="tel:010-88862899" onclick="ActionRecord.clickTele();">010-88862899</a>
+        </div>
         <p>北京今目标信息技术有限公司&nbsp;&nbsp;版权所有</p>
         <p>京公海网安备&nbsp;&nbsp;110108001962&nbsp;&nbsp;号</p>
         <p>京&nbsp;ICP&nbsp;证&nbsp;120422&nbsp;号</p>
     </div>
     <script src="./dist/assets/scripts/common.min.js?v=20160315"></script>
-    <script src="./dist/assets/scripts/intention.min.js?v=20160315"></script>
+    <script src="./dist/assets/scripts/intention.min.js?v=20160322"></script>
 </body>
 
 </html>

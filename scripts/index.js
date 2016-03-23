@@ -84,7 +84,14 @@ $(function() {
         // }
     }
 
-    setCookie('origin', Request.origin || '');
+    var origin = Request.origin;
+    if (origin) {
+        if (origin.indexOf('#') != -1) {
+            // 微信中会携带“#”，这里做处理
+            origin = origin.substr(0, origin.indexOf('#'));
+        }
+        setCookie('origin', origin);
+    }
     setCookie('referrer', document.referrer || '');
 
     ActionRecord.loadIndex();
@@ -196,6 +203,14 @@ var ActionRecord = {
             actionTag: 'click_finger',
             time: this.time,
             action: '点击“选购指纹考勤机”'
+        });
+    },
+    clickRenew: function() {
+        // 点击以旧换新活动banner记录
+        listenLog({
+            actionTag: 'click_renew',
+            time: this.time,
+            action: '点击“以旧换新活动banner”'
         });
     }
 }
