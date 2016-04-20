@@ -8,7 +8,7 @@ $(document).ready(function() {
             networkModel: "WIFI+网线型",
             content: "4.3英寸电容触摸屏（480*272）",
             value: "指纹容量：5000枚</br>人脸容量：500人",
-            price: "749",
+            price: "899",
             color: "白色"
         },
         "zdrl2": {
@@ -16,7 +16,7 @@ $(document).ready(function() {
             networkModel: "WIFI+网线型",
             content: "4.3英寸电容触摸屏（480*272）",
             value: "指纹容量：5000枚&nbsp;&nbsp;&nbsp;人脸容量：500人",
-            price: "749",
+            price: "899",
             color: "黑灰色"
         },
         "zdrl3": {
@@ -24,7 +24,7 @@ $(document).ready(function() {
             networkModel: "网线型",
             content: "4.3英寸电容触摸屏（480*272）",
             value: "指纹容量：5000枚&nbsp;&nbsp;&nbsp;人脸容量：500人",
-            price: "649",
+            price: "799",
             color: "白色"
         },
         "zdrl4": {
@@ -32,7 +32,7 @@ $(document).ready(function() {
             networkModel: "网线型",
             content: "4.3英寸电容触摸屏（480*272）",
             value: "指纹容量：5000枚&nbsp;&nbsp;&nbsp;人脸容量：500人",
-            price: "649",
+            price: "799",
             color: "黑灰色"
         },
         "zdzw1": {
@@ -40,7 +40,7 @@ $(document).ready(function() {
             networkModel: "WIFI+网线型",
             content: "3.5英寸彩屏（320*240）",
             value: "指纹容量3000枚",
-            price: "549",
+            price: "699",
             color: "银白色"
         },
         "zdzw2": {
@@ -48,7 +48,7 @@ $(document).ready(function() {
             networkModel: "网线型",
             content: "3.5英寸彩屏（320*240）",
             value: "指纹容量3000枚",
-            price: "449",
+            price: "599",
             color: "银白色"
         },
         "hszw1": {

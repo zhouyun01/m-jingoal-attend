@@ -16,11 +16,11 @@
     /* 以旧换新活动样式 */
     .product-list li .product_img { position: relative; }
     .product-list li .product_img img { width: 100%; }
-    .product-list li .renew_icon { position: absolute; left: .1rem; top: 0; width: .5rem; height: .5rem; }
+    .product-list li .renew_icon { position: absolute; left: .1rem; top: 0; width: .5rem; height: .5rem; display: none; }
     .product-list li .renew_icon.finger { left: -.05rem; top: .2rem; }
     .product-list li .renew_icon img { width: 100%; }
-    .product-list li .price.activity { color: #f00; font-size: 0; }
-    .product-list li .price.activity del { color: #999; font-size: .16rem; }
+    /*.product-list li .price.activity { color: #f00; font-size: 0; }
+    .product-list li .price.activity del { color: #999; font-size: .16rem; }*/
     </style>
     <script src="./dist/assets/scripts/jquery-1.12.1.min.js?v=20160315"></script>
 </head>
@@ -49,7 +49,7 @@
                     <p class="model">WIFI+网线型</p>
                     <p class="explain">4.3英寸电容触摸屏（480*272）</p>
                     <p class="capacity">人脸容量： 500人</p>
-                    <div class="price activity"><span>￥749</span></br><del>￥899</del></div>
+                    <div class="price"><span>￥899</span></div>
                     <ul class="color_list">
                         <li class="active">
                             <div class="color_radio"></div>
@@ -78,7 +78,7 @@
                     <p class="model">网线型</p>
                     <p class="explain">4.3英寸电容触摸屏（480*272）</p>
                     <p class="capacity">人脸容量： 500人</p>
-                    <div class="price activity"><span>￥649</span></br><del>￥799</del></div>
+                    <div class="price"><span>￥799</span></div>
                     <ul class="color_list">
                         <li class="active">
                             <div class="color_radio"></div>
@@ -106,8 +106,8 @@
                     <p class="model">WIFI+网线型</p>
                     <p class="explain">3.5英寸彩屏（320*240）</p>
                     <p class="capacity">指纹容量： 3000枚</p>
-                    <div class="price activity"><span>￥549</span></br><del>￥699</del></div>
-                    <a href="intention.html?key=JMB108&model=zdzw1&src=./dist/assets/images/zd_finger.jpg&activity=renew" class="btn sel_btn" onclick="ActionRecord.clickFingerAttend('Finger: ZD|JMB108|银白色|WIFI+网线型');">选择</a>
+                    <div class="price"><span>￥699</span></div>
+                    <a href="intention.html?key=JMB108&model=zdzw1&src=./dist/assets/images/zd_finger.jpg" class="btn sel_btn" onclick="ActionRecord.clickFingerAttend('Finger: ZD|JMB108|银白色|WIFI+网线型');">选择</a>
                 </div>
             </li>
             <li>
@@ -122,8 +122,8 @@
                     <p class="model">网线型</p>
                     <p class="explain">3.5英寸彩屏（320*240）</p>
                     <p class="capacity">指纹容量： 3000枚</p>
-                    <div class="price activity"><span>￥449</span></br><del>￥599</del></div>
-                    <a href="intention.html?key=JMB106&model=zdzw2&src=./dist/assets/images/zd_finger.jpg&activity=renew" class="btn sel_btn" onclick="ActionRecord.clickFingerAttend('Finger: ZD|JMB106|银白色|网线型');">选择</a>
+                    <div class="price"><span>￥599</span></div>
+                    <a href="intention.html?key=JMB106&model=zdzw2&src=./dist/assets/images/zd_finger.jpg" class="btn sel_btn" onclick="ActionRecord.clickFingerAttend('Finger: ZD|JMB106|银白色|网线型');">选择</a>
                 </div>
             </li>
             <li>
@@ -135,7 +135,7 @@
                     <p class="model">网线型</p>
                     <p class="explain">2.4英寸彩屏（320×240）</p>
                     <p class="capacity">指纹容量： 1000枚</p>
-                    <div class="price"><span>￥399</span></br><i style="font-size:.16rem">&nbsp;</i></div>
+                    <div class="price"><span>￥399</span></div>
                     <a href="intention.html?key=C27-1&model=hszw1&src=./dist/assets/images/hs_white_finger.jpg" class="btn sel_btn" onclick="ActionRecord.clickFingerAttend('Finger: HS|C27-1|白色|网线型');">选择</a>
                 </div>
             </li>
@@ -148,7 +148,7 @@
                     <p class="model">网线型</p>
                     <p class="explain">2.4英寸彩屏（320×240）</p>
                     <p class="capacity">指纹容量： 1000枚</p>
-                    <div class="price"><span>￥399</span></br><i style="font-size:.16rem">&nbsp;</i></div>
+                    <div class="price"><span>￥399</span></div>
                     <a href="intention.html?key=C27-2&model=hszw2&src=./dist/assets/images/hs_black_finger.jpg" class="btn sel_btn" onclick="ActionRecord.clickFingerAttend('Finger: HS|C27-2|黑灰色|网线型');">选择</a>
                 </div>
             </li>
@@ -165,7 +165,7 @@
         <p>京&nbsp;ICP&nbsp;证&nbsp;120422&nbsp;号</p>
     </div>
     <script src="./dist/assets/scripts/common.min.js?v=20160315"></script>
-    <script src="./dist/assets/scripts/introduction.min.js?v=20160322"></script>
+    <script src="./dist/assets/scripts/introduction.min.js?v=20160420"></script>
 </body>
 
 </html>

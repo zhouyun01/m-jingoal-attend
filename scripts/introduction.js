@@ -91,7 +91,7 @@ $(function() {
             $(this).parents('.product_layout').find('.color_list li.active .color_text').html() +
             '|' + networkModel;
         ActionRecord.clickFaceAttend(pInfo);
-        window.location.href = 'intention.html?key=' + key + '&model=' + model + '&src=' + imgSrc + '&activity=renew';
+        window.location.href = 'intention.html?key=' + key + '&model=' + model + '&src=' + imgSrc;
         e.stopPropagation();
     });
 
