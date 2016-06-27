@@ -39,14 +39,19 @@ gulp.task('scripts', function() {
 // Images
 gulp.task('images', function() {
     return gulp.src('images/**/*')
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+        // .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
         .pipe(gulp.dest('dist/assets/images'))
         .pipe(notify({ message: 'Images task complete' }));
 });
 
+gulp.task('cleanCash', function (done) {
+    return cache.clearAll(done);
+});
+
 // Clean
 gulp.task('clean', function(cb) {
-    del(['dist/assets/styles', 'dist/assets/scripts', 'dist/assets/img'], cb)
+    return del(['dist/assets/styles', 'dist/assets/scripts', 'dist/assets/images'], cb)
 });
 
 // Default task

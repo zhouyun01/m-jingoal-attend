@@ -2,10 +2,11 @@
 function UrlSearch() {
     var name, value;
     var str = location.href;
-    var num = str.indexOf("?")
+    var num = str.indexOf("?");
     str = str.substr(num + 1);
 
-    var arr = str.split("&");
+    // var arr = str.split("&");
+    var arr = str.replace(/\?/g, '&').split("&");
     for (var i = 0; i < arr.length; i++) {
         num = arr[i].indexOf("=");
         if (num > 0) {
@@ -43,7 +44,7 @@ var listenLog = function(obj) {
     var msgLog = {
         time: getTime(),
         cid: "",
-        uid: "",
+        uid: Request.uid || "",
         productTag: "attendbuy",
         actionTag: "",
         puse: "web_js",

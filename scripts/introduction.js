@@ -1,4 +1,12 @@
 $(function() {
+    var origin = Request.origin;
+    if (origin) {
+        if (origin.indexOf('#') != -1) {
+            // 微信中会携带“#”，这里做处理
+            origin = origin.substr(0, origin.indexOf('#'));
+        }
+        setCookie('origin', origin);
+    }
     if (!getCookie('referrer')) {
         setCookie('referrer', document.referrer || '');
     }
@@ -38,7 +46,7 @@ $(function() {
         ActionRecord.loadFaceAttend();
     }
     if (url_token == "12") {
-        $(".intro").find("p").html("真地指纹考勤机");
+        $(".intro").find("p").html("中控指纹考勤机");
         $(".slide-box>.Finger_attend").show();
         $(".slide-box>.Face_attend").hide();
 
@@ -49,24 +57,35 @@ $(function() {
             paddingRight: right_lb + 'px',
         });
 
+        var zhongkongLeft = $('#li_zhongkong').offset().left;
+        var zhendiLeft = $('#li_zhendi').offset().left;
+        var haoshunLeft = $('#li_haoshun').offset().left;
+
         $('.slide-box').on("scroll", function() {
             var leftBox = $(this).scrollLeft();
-            if (leftBox < (1.5 * li_width + left_lb)) {
-                $(".intro").find("p").html("真地指纹考勤机");
 
-                init_para(finger_para_datas);
+            //console.log(leftBox + ' ' + zhendiLeft + ' ' + haoshunLeft);
 
-                if (leftBox < (0.5 * li_width + left_lb)) {
-                    setProductInfo(17, 'WIFI、TCP/IP、U盘、USB通讯');
-                    setProductInfo(29, 'JMB106');
-                } else {
-                    setProductInfo(17, 'TCP/IP、U盘、USB通讯');
-                    setProductInfo(29, 'JMB108');
-                }
-            } else {
+            if (leftBox >= haoshunLeft - li_width * 0.5) {
                 $(".intro").find("p").html("浩顺指纹考勤机");
 
-                init_para(finger2_para_datas);
+                init_para(finger_haoshun_para_datas);
+            } else if (leftBox >= zhendiLeft  - li_width * 0.5) {
+                $(".intro").find("p").html("真地指纹考勤机");
+
+                init_para(finger_zhendi_para_datas);
+
+                if (leftBox >= zhendiLeft  - li_width * 0.5 + li_width) {
+                    setProductInfo(17, 'TCP/IP、U盘、USB通讯');
+                    setProductInfo(29, 'JMB108');
+                } else {
+                    setProductInfo(17, 'WIFI、TCP/IP、U盘、USB通讯');
+                    setProductInfo(29, 'JMB106');
+                }
+            } else {
+                $(".intro").find("p").html("中控指纹考勤机");
+
+                init_para(finger_zhongkong_para_datas);
             }
         });
 
@@ -166,7 +185,7 @@ $(function() {
         }];
         init_para(face_para_datas);
     } else if (url_token == "12") {
-        var finger_para_datas = [{
+        var finger_zhendi_para_datas = [{
             title: '显示屏',
             content: '3.5英寸彩屏（320*240）'
         }, {
@@ -257,7 +276,7 @@ $(function() {
             title: "是否兼容其他型号指纹信息",
             content: "JMB106"
         }];
-        var finger2_para_datas = [{
+        var finger_haoshun_para_datas = [{
             title: '显示屏',
             content: '2.4英寸彩屏（320×240）'
         }, {
@@ -318,7 +337,56 @@ $(function() {
             title: "是否兼容其他型号指纹信息",
             content: "否"
         }];
-        init_para(finger_para_datas);
+        var finger_zhongkong_para_datas = [{
+            title: '显示屏',
+            content: '2.8英寸TFT彩屏（分辨率320*240）'
+        }, {
+            title: 'CPU',
+            content: 'MIPS内核，主频1GHz'
+        }, {
+            title: '验证方式',
+            content: '指纹'
+        }, {
+            title: '验证速度',
+            content: '≤0.8秒'
+        }, {
+            title: '拒真率（FAR）',
+            content: '≤0.01%'
+        }, {
+            title: '认假率（FRR）',
+            content: '≤0.0001%'
+        }, {
+            title: '指纹容量',
+            content: '3200枚'
+        }, {
+            title: '记录容量',
+            content: '12万条'
+        }, {
+            title: '通讯方式',
+            content: 'TCP/IP、USB通讯'
+        }, {
+            title: '后台软件',
+            content: '今目标系统平台'
+        }, {
+            title: '电源',
+            content: '5V DC，工作电流800mA'
+        }, {
+            title: '工作环境',
+            content: '温度：0℃~+45℃，湿度(RH)：20%~80%'
+        }, {
+            title: '产品尺寸',
+            content: '179.96mm*134.94mm*39.85mm'
+        }, {
+            title: '产品重量',
+            content: '480g'
+        }, {
+            title: '装箱清单',
+            content: '考勤机*1、电源适配器*1（电源线长度1.2m）、说明书*1、固定背板*1、螺丝包*1'
+        }, {
+            title: '是否兼容其他型号指纹信息',
+            content: '否'
+        }];
+        init_para(finger_zhongkong_para_datas);
     }
 
     function init_para(para) {

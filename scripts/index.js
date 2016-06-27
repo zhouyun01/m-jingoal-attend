@@ -12,7 +12,7 @@ $(function() {
         width: 354,
         height: 272,
         navigation: false,
-        titleArr: ['真地指纹考勤机', '浩顺指纹考勤机'],
+        titleArr: ['中控指纹考勤机', '真地指纹考勤机', '浩顺指纹考勤机'],
         play: {
             effect: 'fade'
         }
